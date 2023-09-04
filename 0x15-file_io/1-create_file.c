@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	fildes = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	wrt = write(fd, text_content, len);
+	wrt = write(fildes, text_content, len);
 
 	if (fildes == -1 || wrt == -1)
 		return (-1);
